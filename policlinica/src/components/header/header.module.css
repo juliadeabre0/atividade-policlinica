@@ -1,0 +1,41 @@
+.opcaoessubmenu{
+    display: none;
+    position: absolute;
+    background-color: rgb(222, 196, 247);
+    padding: 1%;
+}
+
+.opcao{
+    list-style-type: none;
+}
+
+.linkMenu{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.76);
+    font-weight: bold;
+}
+
+.opcaoessubmenu li{
+    list-style-type: none;
+}
+
+.linkMenu:hover{
+    color: black;
+}
+
+.opcao:hover > .opcaoessubmenu{
+    display: block;
+}
+
+.conteudoheader{
+    display: flex;
+}
+
+.ulopocoesprincipais{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px 0;
+}

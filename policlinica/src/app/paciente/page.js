@@ -1,0 +1,169 @@
+'use client'
+import React from "react"
+import Link from "next/link"
+import style from "./paciente.module.css"
+
+export default function paciente() {
+    return (
+        <div>
+            <table>
+                <thead>
+                    <tr key="1"><th>
+                        ID
+                    </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Telefone
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            CPF
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr key="2">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456678910
+                        </td>
+                    </tr>
+                    <tr key="3">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                    <tr key="4">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                    <tr key="5">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                    <tr key="6">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                    <tr key="7">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                    <tr key="8">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                    <tr key="9">
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            Rafael
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                        <td>
+                            rafael@gmail.com
+                        </td>
+                        <td>
+                            123456789
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    )
+}
