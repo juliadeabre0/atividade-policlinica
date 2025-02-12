@@ -1,16 +1,28 @@
 'use client'
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import style from "./paciente.module.css"
 
 export default function paciente() {
+    const [pegarDados, setDados] = useState([])
+
+    async function executarDados() {
+        const valores = await fetch('https://api-clinica-2a.onrender.com/pacientes')
+        const data = await valores.json()
+        setDados(data)
+    }
+
+    useEffect(() => {
+        executarDados();
+    }, []);
+
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr key="1"><th>
-                        ID
-                    </th>
+        <div className="divpai">
+            <table className="tabela">
+                <thead className="cabecatabela">
+                    <tr key="1" className="linhacabeca">
+                        <th>
+                            ID</th>
                         <th>
                             Nome
                         </th>
@@ -25,143 +37,16 @@ export default function paciente() {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr key="2">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456678910
-                        </td>
-                    </tr>
-                    <tr key="3">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
-                    <tr key="4">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
-                    <tr key="5">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
-                    <tr key="6">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
-                    <tr key="7">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
-                    <tr key="8">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
-                    <tr key="9">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                        <td>
-                            rafael@gmail.com
-                        </td>
-                        <td>
-                            123456789
-                        </td>
-                    </tr>
+                <tbody className="corpotabela">
+                    {pegarDados.map(paciente => (
+                        <tr key={paciente.id} className="linhatabela">
+                            <td>{paciente.id}</td>
+                            <td>{paciente.nome}</td>
+                            <td>{paciente.telefone}</td>
+                            <td>{paciente.email}</td>
+                            <td>{paciente.cpf}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

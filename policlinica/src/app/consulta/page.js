@@ -1,168 +1,52 @@
 'use client'
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import style from "./consulta.module.css"
 
 export default function consulta() {
+    const [pegarDados, setDados] = useState([])
+
+    async function executarDados() {
+        const valores = await fetch('https://api-clinica-2a.onrender.com/consultas')
+        const data = await valores.json()
+        setDados(data)
+    }
+
+    useEffect(() => {
+        executarDados();
+    }, []);
+
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr key="">
+        <div className="divpai">
+            <table className="tabela">
+                <thead className="cabecatabela">
+                    <tr key="1" className="linhacabeca">
                         <th>
-                            ID
-                        </th>
+                            ID</th>
                         <th>
-                            Médico
+                            Medico
                         </th>
                         <th>
                             Especialidade
                         </th>
                         <th>
-                            Paciente
+                            pacientes
                         </th>
                         <th>
                             Tipo
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr key="1">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="2">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="3">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="4">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="5">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="6">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="7 ">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
-                    <tr key="8">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Rafael
-                        </td>
-                        <td>
-                            Terapelta
-                        </td>
-                        <td>
-                            Leonardo
-                        </td>
-                        <td>
-                            plano de saúde
-                        </td>
-                    </tr>
+                <tbody className="corpotabela">
+                    {pegarDados.map(consulta => (
+                        <tr key={consulta.id} className="linhatabela">
+                            <td>{consulta.id}</td>
+                            <td>{consulta.medico}</td>
+                            <td>{consulta.especialidade}</td>
+                            <td>{consulta.paciente}</td>
+                            <td>{consulta.tipo}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

@@ -1,7 +1,7 @@
 .opcaoessubmenu{
     display: none;
     position: absolute;
-    background-color: rgb(222, 196, 247);
+    background-color: #c5d4eb;
     padding: 1%;
 }
 
@@ -11,7 +11,7 @@
 
 .linkMenu{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.76);
     font-weight: bold;
 }

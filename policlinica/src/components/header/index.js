@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <div className={style.conteudoheader}>
             <ul className={style.ulopocoesprincipais}>
-                <li className={style.opcao}><Link href="#" className={style.linkMenu}>Home</Link></li>
+                <li className={style.opcao}><Link href="/" className={style.linkMenu}>Home</Link></li>
 
                 <li className={style.opcao}><Link href="#" className={style.linkMenu}>Médico</Link>
                     <ul className={style.opcaoessubmenu}>
