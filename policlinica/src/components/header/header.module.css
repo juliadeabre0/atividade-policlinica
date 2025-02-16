@@ -2,30 +2,45 @@
     display: none;
     position: absolute;
     background-color: #c5d4eb;
-    padding: 1%;
+    width: 150px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    margin-left: calc(-35px);
+    z-index: 1000;
 }
 
 .opcao{
     list-style-type: none;
 }
 
-.linkMenu{
+.linkMenu, .linkSubMenu{
     text-decoration: none;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.76);
     font-weight: bold;
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    transition: all 0.2s;
 }
 
-.opcaoessubmenu li{
+.opcaoessubmenu > li{
     list-style-type: none;
+    width: 100%;
 }
 
 .linkMenu:hover{
     color: black;
 }
 
+.linkSubMenu:hover{
+    color: black;
+    background-color: #b6cdf0bb;
+}
+
 .opcao:hover > .opcaoessubmenu{
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .conteudoheader{
@@ -38,4 +53,15 @@
     width: 100%;
     justify-content: space-around;
     padding: 20px 0;
+}
+
+@media screen and (max-width: 660px) {
+    .linkSubMenu{
+        font-size: 12px;
+    }
+
+    .opcaoessubmenu{
+        width: 100px;
+        margin-left: calc(-12px);
+    }
 }

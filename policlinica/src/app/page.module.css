@@ -1,0 +1,14 @@
+.telainicial{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.campotextoinicial{
+    margin: auto;
+    width:80%;
+    background-color: rgb(214, 233, 255);
+    padding: 1%;
+    border: 10px solid rgb(193, 219, 235);
+    border-radius: 20px;
+}

@@ -7,23 +7,32 @@
 
 header {
   background-color: #90b1d8;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 body{
-  background-color: azure;
+  background-color: rgb(242, 255, 255);
 }
 
 .divpai{
   display: flex;
+  flex-direction: column;
+}
+
+.divpaitabela{
+  display: flex;
   width: 100%;
   justify-content: space-around;
+  overflow-y: auto;
 }
 
 .tabela{
   width: 90%;
+  min-width: 600px;
   text-align: center;
   margin:20px auto;
   background-color: rgb(222, 230, 230);
+  overflow-y: auto;
 }
 
 .cabecatabela{
@@ -43,5 +52,40 @@ body, html {
 
 main {
   flex: 1; /* Faz o conteúdo crescer e empurra o footer para baixo */
+}
+
+.campoinputpesquisa{
+  margin: 20px auto;
+  width: 90%;
+}
+
+.campoinputpesquisa input{
+    padding: 4px 4px;
+    border-radius: 10px;
+    border: solid 1px;
+    max-width: 200px;
+
+}
+
+.listanomes{
+  position: absolute;
+  padding: 1%;
+  border-radius: 10px;
+  background-color: #c2d9f5;
+  max-width: 200px;
+  min-width: 160px;
+  margin-top: 10px;
+  max-height: 500px;
+  overflow-x: auto;
+}
+
+.listanomes ul{
+  list-style-type: none;
+}
+
+.inputspai{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
